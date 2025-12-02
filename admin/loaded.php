@@ -84,109 +84,118 @@ class biz_pricing_loader{
             ),
             // yearly pricing
             array(
-                'id'    => 'yearly_pricing',
-                'title' => __('Yearly Pricing', 'biz-pricing'),
+                'id'    => 'pricing',
+                'title' => __('Pricing', 'biz-pricing'),
                 'icon'  => 'dashicons dashicons-calendar',
-                'fields' => array(
-
+                'fields' => array( 
+                ),
+                'subsections' => array(
                     array(
-                        'id'      => 'yearly_pricing',
-                        'type'    => 'repeater',
-                        'title'   => __('Add Yearly Pricing', 'biz-pricing'),
-                        'button_title' => __('Add New Pricing', 'biz-pricing'),
-                        'fields'  => array(
+                        'id'    => 'yearly_pricing',
+                        'title' => __('Yearly Pricing Section', 'biz-pricing'),
+                        'fields' => array(
+                            array(
+                                'id'      => 'yearly_pricing',
+                                'type'    => 'repeater',
+                                'title'   => __('Add Yearly Pricing', 'biz-pricing'),
+                                'button_title' => __('Add New Pricing', 'biz-pricing'),
+                                // 'allow_add' => false,
+                                'sortable'   => false,
+                                'fields'  => array(
+
+                                    array(
+                                        'id'      => 'title',
+                                        'type'    => 'text',
+                                        'title'   => __('Title', 'biz-pricing'),
+                                        'default' => '1 Site',
+                                    ),
+
+                                    array(
+                                        'id'      => 'name',
+                                        'type'    => 'text',
+                                        'title'   => __('Name', 'biz-pricing'),
+                                        'default' => 'Starter',
+                                    ),
+
+                                    array(
+                                        'id'      => 'price',
+                                        'type'    => 'text',
+                                        'title'   => __('Price', 'biz-pricing'),
+                                        'default' => '$59.99',
+                                    ),
+
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'id'    => 'lifetime_pricing',
+                        'title' => __('Lifetime Pricing', 'biz-pricing'),
+                        'fields' => array(
 
                             array(
-                                'id'      => 'title',
-                                'type'    => 'text',
-                                'title'   => __('Title', 'biz-pricing'),
-                                'default' => '1 Site',
-                            ),
+                                'id'      => 'lifetime_pricing',
+                                'type'    => 'repeater',
+                                'title'   => __('Add Lifetime Pricing', 'biz-pricing'),
+                                'button_title' => __('Add New Pricing', 'biz-pricing'),
+                                // 'allow_add' => false,
+                                'sortable'   => false,
+                                'fields'  => array(
 
-                            array(
-                                'id'      => 'name',
-                                'type'    => 'text',
-                                'title'   => __('Name', 'biz-pricing'),
-                                'default' => 'Starter',
-                            ),
+                                    array(
+                                        'id'      => 'title',
+                                        'type'    => 'text',
+                                        'title'   => __('Title', 'biz-pricing'),
+                                        'default' => '1 Site',
+                                    ),
 
-                            array(
-                                'id'      => 'price',
-                                'type'    => 'text',
-                                'title'   => __('Price', 'biz-pricing'),
-                                'default' => '$99.99',
-                            ),
+                                    array(
+                                        'id'      => 'name',
+                                        'type'    => 'text',
+                                        'title'   => __('Name', 'biz-pricing'),
+                                        'default' => 'Starter',
+                                    ),
 
+                                    array(
+                                        'id'      => 'price',
+                                        'type'    => 'text',
+                                        'title'   => __('Price', 'biz-pricing'),
+                                        'default' => '$199.99',
+                                    ),
+
+                                ),
+                            ),
                         ),
                     ),
                 ),
             ),
             //lifetime pricing
-            array(
-                'id'    => 'lifetime_pricing',
-                'title' => __('Lifetime Pricing', 'biz-pricing'),
-                'icon'  => 'dashicons dashicons-universal-access',
-                'fields' => array(
+            
+            // //Yearly Features
+            // array(
+            //     'id'    => 'yearly_features',
+            //     'title' => __('Yearly Features', 'biz-pricing'),
+            //     'icon'  => 'dashicons dashicons-list-view',
+            //     'fields' => array(
 
-                    array(
-                        'id'      => 'lifetime_pricing',
-                        'type'    => 'repeater',
-                        'title'   => __('Add Lifetime Pricing', 'biz-pricing'),
-                        'button_title' => __('Add New Pricing', 'biz-pricing'),
-                        'allow_add' => false,
-                        'sortable'   => false,
-                        'fields'  => array(
+            //         array(
+            //             'id'      => 'yearly_features',
+            //             'type'    => 'repeater',
+            //             'title'   => __('Add Yearly Features', 'biz-pricing'),
+            //             'button_title' => __('Add New Feature', 'biz-pricing'),
+            //             'fields'  => array(
 
-                            array(
-                                'id'      => 'title',
-                                'type'    => 'text',
-                                'title'   => __('Title', 'biz-pricing'),
-                                'default' => '1 Site',
-                            ),
+            //                 array(
+            //                     'id'      => 'feature',
+            //                     'type'    => 'text',
+            //                     'title'   => __('Feature', 'biz-pricing'),
+            //                     'default' => 'Unlimited Updates',
+            //                 ),
 
-                            array(
-                                'id'      => 'name',
-                                'type'    => 'text',
-                                'title'   => __('Name', 'biz-pricing'),
-                                'default' => 'Starter',
-                            ),
-
-                            array(
-                                'id'      => 'price',
-                                'type'    => 'text',
-                                'title'   => __('Price', 'biz-pricing'),
-                                'default' => '$199.99',
-                            ),
-
-                        ),
-                    ),
-                ),
-            ),
-            //Yearly Features
-            array(
-                'id'    => 'yearly_features',
-                'title' => __('Yearly Features', 'biz-pricing'),
-                'icon'  => 'dashicons dashicons-list-view',
-                'fields' => array(
-
-                    array(
-                        'id'      => 'yearly_features',
-                        'type'    => 'repeater',
-                        'title'   => __('Add Yearly Features', 'biz-pricing'),
-                        'button_title' => __('Add New Feature', 'biz-pricing'),
-                        'fields'  => array(
-
-                            array(
-                                'id'      => 'feature',
-                                'type'    => 'text',
-                                'title'   => __('Feature', 'biz-pricing'),
-                                'default' => 'Unlimited Updates',
-                            ),
-
-                        ),
-                    ),
-                ),
-            ),
+            //             ),
+            //         ),
+            //     ),
+            // ),
         );
     } 
 }

@@ -80,6 +80,13 @@ class biz_pricing_loader{
                         'title'   => __('Tab Title (Bundle)', 'biz-pricing'),
                         'default' => 'Bundle',
                     ),
+                    //Enable Bundle
+                    array(
+                        'id'      => 'enable_bundle',
+                        'type'    => 'checkbox',
+                        'title'   => __('Enable Bundle Tab', 'biz-pricing'),
+                        'default' => true,
+                    )
                 ),
             ),
             // yearly pricing
@@ -169,33 +176,171 @@ class biz_pricing_loader{
                     ),
                 ),
             ),
-            //lifetime pricing
             
             // //Yearly Features
+            array(
+                'id'    => 'features',
+                'title' => __('Features', 'biz-pricing'),
+                'icon'  => 'dashicons dashicons-list-view',
+                'fields' => array(  
+                ),
+                'subsections' => array(
+                    array(
+                        'id'    => 'yearly_features_',
+                        'title' => __('Yearly Features ', 'biz-pricing'),
+                        'fields' => array(
+                            array(
+                                'id'      => 'yearly_features',
+                                'type'    => 'repeater',
+                                'title'   => __('Add Yearly Features', 'biz-pricing'),
+                                'button_title' => __('Add New Feature', 'biz-pricing'),
+                                // 'allow_add' => false,
+                                'sortable'   => false,
+                                'fields'  => array(
+
+                                    array(
+                                        'id'      => 'feature',
+                                        'type'    => 'text',
+                                        'title'   => __('Feature', 'biz-pricing'),
+                                        'default' => 'Feature Name',
+                                    ),
+
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'id'    => 'lifetime_features_',
+                        'title' => __('Lifetime Features ', 'biz-pricing'),
+                        'fields' => array(
+                            array(
+                                'id'      => 'lifetime_features',
+                                'type'    => 'repeater',
+                                'title'   => __('Add Lifetime Features', 'biz-pricing'),
+                                'button_title' => __('Add New Feature', 'biz-pricing'),
+                                // 'allow_add' => false,
+                                'sortable'   => false,
+                                'fields'  => array(
+
+                                    array(
+                                        'id'      => 'feature',
+                                        'type'    => 'text',
+                                        'title'   => __('Feature', 'biz-pricing'),
+                                        'default' => 'Feature Name',
+                                    ),
+
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
             // array(
-            //     'id'    => 'yearly_features',
-            //     'title' => __('Yearly Features', 'biz-pricing'),
-            //     'icon'  => 'dashicons dashicons-list-view',
+            //     'id'    => 'bundle_section',
+            //     'title' => __('Bundle Settings', 'biz-pricing'),
+            //     'icon'  => 'dashicons-archive',
+
+            //     // Dependency: Show only if "Enable Bundle Tab" is checked
+            //     'dependency' => array(
+            //         'field' => 'enable_bundle',
+            //         'value' => '2',
+            //     ),
+
             //     'fields' => array(
 
             //         array(
-            //             'id'      => 'yearly_features',
+            //             'id'      => 'bundle_items',
             //             'type'    => 'repeater',
-            //             'title'   => __('Add Yearly Features', 'biz-pricing'),
-            //             'button_title' => __('Add New Feature', 'biz-pricing'),
-            //             'fields'  => array(
+            //             'title'   => __('Add Bundle Products', 'biz-pricing'),
+            //             'button_title' => __('Add Bundle Item', 'biz-pricing'),
+            //             'sortable' => false,
 
+            //             'fields' => array(
             //                 array(
-            //                     'id'      => 'feature',
-            //                     'type'    => 'text',
-            //                     'title'   => __('Feature', 'biz-pricing'),
-            //                     'default' => 'Unlimited Updates',
+            //                     'id'    => 'product_name',
+            //                     'type'  => 'text',
+            //                     'title' => __('Product Name', 'biz-pricing'),
             //                 ),
 
+            //                 array(
+            //                     'id'    => 'product_price',
+            //                     'type'  => 'text',
+            //                     'title' => __('Bundle Price', 'biz-pricing'),
+            //                 ),
             //             ),
             //         ),
             //     ),
             // ),
+
+            //bundel features
+            array(
+                'id'    => 'bundle_settings',
+                'title' => __('Bundle', 'biz-pricing'),
+                'icon'  => 'dashicons-cart',
+
+                //  SHOW ONLY IF BUNDLE ENABLED
+                'dependency' => array(
+                    'field' => 'enable_bundle',
+                    'value' => '1',
+                ),
+
+                'fields' => array(
+                    array(
+                        'id'      => 'bundle_main_title',
+                        'type'    => 'text',
+                        'title'   => __('Main Title', 'biz-pricing'),
+                        'default' => 'Bundle 1',
+                    ),
+
+                    array(
+                        'id'      => 'bundle_plugin_id',
+                        'type'    => 'text',
+                        'title'   => __('Plugin ID', 'biz-pricing'),
+                        'default' => '',
+                        'desc'    => __('Freemius Plugin ID for Bundle', 'biz-pricing'),
+                    ),
+
+                    array(
+                        'id'      => 'bundle_plan_id',
+                        'type'    => 'text',
+                        'title'   => __('Plan ID', 'biz-pricing'),
+                        'default' => '',
+                        'desc'    => __('Freemius Plan ID for Bundle', 'biz-pricing'),
+                    ),
+
+                    // =============== Pricing Repeater (1 Site, 5 Site, Unlimited etc)
+                    array(
+                        'id'      => 'bundle_pricing_items',
+                        'type'    => 'repeater',
+                        'title'   => __('Bundle Pricing', 'biz-pricing'),
+                        'button_title' => __('Add New Bundle Plan', 'biz-pricing'),
+                        'sortable' => false,
+
+                        'fields' => array(
+                            array(
+                                'id'      => 'title',
+                                'type'    => 'text',
+                                'title'   => __('Title', 'biz-pricing'),
+                                'default' => '1 Site',
+                            ),
+
+                            array(
+                                'id'      => 'name',
+                                'type'    => 'text',
+                                'title'   => __('Name', 'biz-pricing'),
+                                'default' => 'Starter',
+                            ),
+
+                            array(
+                                'id'      => 'price',
+                                'type'    => 'text',
+                                'title'   => __('Price', 'biz-pricing'),
+                                'default' => '$99.99',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
         );
     } 
 }

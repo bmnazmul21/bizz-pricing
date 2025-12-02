@@ -1,0 +1,327 @@
+/**
+ * BizzPlugin Options Framework - API Section CSS
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   API Section Styles
+   ============================================= */
+
+.bizzplugin-api-card {
+    background: var(--bizzplugin-bg-white);
+    border: 1px solid var(--bizzplugin-border);
+    border-radius: var(--bizzplugin-radius);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.bizzplugin-api-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: var(--bizzplugin-bg);
+    border-bottom: 1px solid var(--bizzplugin-border);
+}
+
+.bizzplugin-api-card-header .dashicons {
+    font-size: 20px;
+    color: var(--bizzplugin-primary);
+}
+
+.bizzplugin-api-card-header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--bizzplugin-text);
+}
+
+.bizzplugin-api-card-body {
+    padding: 20px;
+}
+
+/* API Endpoint Row */
+.bizzplugin-api-endpoint-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background: var(--bizzplugin-bg);
+    border-radius: var(--bizzplugin-radius-sm);
+}
+
+.bizzplugin-method {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.bizzplugin-method-get {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.bizzplugin-method-post {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.bizzplugin-endpoint-url {
+    flex: 1;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    color: var(--bizzplugin-text);
+    word-break: break-all;
+    background: transparent;
+    padding: 0;
+}
+
+.bizzplugin-copy-btn {
+    padding: 4px 8px !important;
+    min-height: auto !important;
+}
+
+.bizzplugin-copy-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.bizzplugin-api-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 15px 0 0 0;
+    padding: 12px 15px;
+    background: var(--bizzplugin-primary-light);
+    border-radius: var(--bizzplugin-radius-sm);
+    font-size: 13px;
+    color: var(--bizzplugin-primary-dark);
+}
+
+.bizzplugin-api-note .dashicons {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Webhook Input */
+.bizzplugin-webhook-field {
+    margin-bottom: 20px;
+}
+
+.bizzplugin-webhook-input-wrap {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.bizzplugin-webhook-input {
+    flex: 1;
+}
+
+#bizzplugin-test-webhook {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+#bizzplugin-test-webhook .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.bizzplugin-webhook-secret {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bizzplugin-border);
+}
+
+.bizzplugin-secret-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.bizzplugin-secret-code {
+    padding: 8px 12px;
+    background: var(--bizzplugin-bg);
+    border-radius: var(--bizzplugin-radius-sm);
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+}
+
+/* API Key Display */
+.bizzplugin-api-key-field {
+    margin-bottom: 20px;
+}
+
+.bizzplugin-api-key-display {
+    margin-top: 8px;
+}
+
+.bizzplugin-api-key-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: var(--bizzplugin-bg);
+    border-radius: var(--bizzplugin-radius-sm);
+}
+
+.bizzplugin-api-key-code {
+    flex: 1;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    color: var(--bizzplugin-text);
+    word-break: break-all;
+    background: transparent;
+    padding: 0;
+}
+
+.bizzplugin-no-key-text {
+    color: var(--bizzplugin-text-secondary);
+    font-style: italic;
+}
+
+.bizzplugin-webhook-response {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bizzplugin-border);
+}
+
+.bizzplugin-webhook-response h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Docs Tabs */
+.bizzplugin-docs-tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--bizzplugin-border);
+    padding-bottom: 15px;
+}
+
+.bizzplugin-docs-tab {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid var(--bizzplugin-border);
+    border-radius: var(--bizzplugin-radius-sm);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--bizzplugin-text);
+}
+
+.bizzplugin-docs-tab:hover {
+    border-color: var(--bizzplugin-primary);
+    color: var(--bizzplugin-primary);
+}
+
+.bizzplugin-docs-tab.active {
+    background: var(--bizzplugin-primary);
+    border-color: var(--bizzplugin-primary);
+    color: #fff;
+}
+
+.bizzplugin-docs-content {
+    display: none;
+}
+
+.bizzplugin-docs-content.active {
+    display: block;
+}
+
+/* Code Block */
+.bizzplugin-code-block {
+    padding: 15px;
+    background: #0e2a57;
+    color: #65a7ff;
+    border-radius: var(--bizzplugin-radius-sm);
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+/* Legacy API styles (kept for backwards compatibility) */
+.bizzplugin-api-info,
+.bizzplugin-webhook-settings,
+.bizzplugin-api-docs {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--bizzplugin-border);
+}
+
+.bizzplugin-api-info:last-child,
+.bizzplugin-webhook-settings:last-child,
+.bizzplugin-api-docs:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.bizzplugin-api-info h3,
+.bizzplugin-webhook-settings h3,
+.bizzplugin-api-docs h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bizzplugin-api-info h4,
+.bizzplugin-api-docs h4 {
+    margin: 20px 0 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bizzplugin-api-endpoint {
+    margin: 10px 0;
+    padding: 10px 15px;
+    background: var(--bizzplugin-bg);
+    border-radius: var(--bizzplugin-radius-sm);
+}
+
+.bizzplugin-api-endpoint strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: var(--bizzplugin-text);
+}
+
+.bizzplugin-api-endpoint code {
+    display: block;
+    padding: 5px 0;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    color: var(--bizzplugin-primary);
+    word-break: break-all;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+@media screen and (max-width: 782px) {
+    .bizzplugin-webhook-input-wrap {
+        flex-direction: column;
+    }
+    
+    .bizzplugin-docs-tabs {
+        flex-wrap: wrap;
+    }
+}

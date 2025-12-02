@@ -1,0 +1,73 @@
+/**
+ * BizzPlugin Options Framework - Text Input Field CSS
+ * 
+ * For: text, email, url, number, password fields
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   Input Fields
+   ============================================= */
+
+.bizzplugin-input,
+.bizzplugin-textarea,
+.bizzplugin-select,
+.bizzplugin-multi-select,
+.bizzplugin-post-select {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1px solid var(--bizzplugin-border-dark);
+    border-radius: var(--bizzplugin-radius-sm);
+    background: var(--bizzplugin-bg);
+    transition: all 0.2s ease;
+    color: var(--bizzplugin-text);
+}
+
+.bizzplugin-input:focus,
+.bizzplugin-textarea:focus,
+.bizzplugin-select:focus,
+.bizzplugin-multi-select:focus,
+.bizzplugin-post-select:focus {
+    border-color: var(--bizzplugin-primary);
+    box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.1);
+    outline: none;
+}
+
+.bizzplugin-input:disabled,
+.bizzplugin-textarea:disabled,
+.bizzplugin-select:disabled {
+    background-color: var(--bizzplugin-bg);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.bizzplugin-input-number {
+    max-width: 150px;
+}
+
+/* Error state */
+.bizzplugin-field.has-error .bizzplugin-input,
+.bizzplugin-field.has-error .bizzplugin-textarea,
+.bizzplugin-field.has-error .bizzplugin-select {
+    border-color: var(--bizzplugin-error);
+    background: #fef2f2;
+}
+
+.bizzplugin-error-message {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    color: var(--bizzplugin-error);
+    font-size: 13px;
+}
+
+.bizzplugin-error-message .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}

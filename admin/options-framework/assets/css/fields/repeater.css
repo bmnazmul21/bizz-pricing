@@ -1,0 +1,243 @@
+/**
+ * BizzPlugin Options Framework - Repeater Field CSS
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   Repeater Container
+   ============================================= */
+
+.bizzplugin-repeater-wrap {
+    width: 100%;
+}
+
+.bizzplugin-repeater-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* =============================================
+   Repeater Item
+   ============================================= */
+
+.bizzplugin-repeater-item {
+    background: var(--bizzplugin-bg);
+    border: 1px solid var(--bizzplugin-border);
+    border-radius: var(--bizzplugin-radius);
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.bizzplugin-repeater-item:hover {
+    border-color: var(--bizzplugin-border-dark);
+}
+
+/* =============================================
+   Item Header
+   ============================================= */
+
+.bizzplugin-repeater-item-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: var(--bizzplugin-bg-white);
+    border-bottom: 1px solid var(--bizzplugin-border);
+    cursor: default;
+    gap: 10px;
+}
+
+.bizzplugin-repeater-item.collapsed .bizzplugin-repeater-item-header {
+    border-bottom: none;
+}
+
+.bizzplugin-repeater-item-handle {
+    cursor: move;
+    color: var(--bizzplugin-text-secondary);
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    transition: color 0.2s ease;
+}
+
+.bizzplugin-repeater-item-handle:hover {
+    color: var(--bizzplugin-primary);
+}
+
+.bizzplugin-repeater-item-title {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--bizzplugin-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =============================================
+   Item Actions
+   ============================================= */
+
+.bizzplugin-repeater-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.bizzplugin-repeater-item-toggle,
+.bizzplugin-repeater-item-remove {
+    background: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: var(--bizzplugin-text-secondary);
+    border-radius: var(--bizzplugin-radius-sm);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bizzplugin-repeater-item-toggle:hover {
+    background: var(--bizzplugin-bg);
+    color: var(--bizzplugin-primary);
+}
+
+.bizzplugin-repeater-item-remove:hover {
+    background: #fef2f2;
+    color: var(--bizzplugin-error);
+}
+
+.bizzplugin-repeater-item-toggle .dashicons,
+.bizzplugin-repeater-item-remove .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* =============================================
+   Item Content
+   ============================================= */
+
+.bizzplugin-repeater-item-content {
+    padding: 20px 15px;
+}
+
+.bizzplugin-repeater-item.collapsed .bizzplugin-repeater-item-content {
+    display: none;
+}
+
+/* =============================================
+   Sub-fields
+   ============================================= */
+
+.bizzplugin-repeater-subfield {
+    margin-bottom: 15px;
+}
+
+.bizzplugin-repeater-subfield:last-child {
+    margin-bottom: 0;
+}
+
+.bizzplugin-repeater-subfield-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--bizzplugin-text);
+    margin-bottom: 6px;
+}
+
+.bizzplugin-repeater-subfield-input {
+    width: 100%;
+}
+
+.bizzplugin-repeater-subfield-input .bizzplugin-input,
+.bizzplugin-repeater-subfield-input .bizzplugin-textarea,
+.bizzplugin-repeater-subfield-input .bizzplugin-select {
+    width: 100%;
+}
+
+.bizzplugin-repeater-subfield-desc {
+    margin: 6px 0 0 0;
+    font-size: 12px;
+    color: var(--bizzplugin-text-secondary);
+}
+
+/* Image field in repeater */
+.bizzplugin-repeater-subfield .bizzplugin-image-upload {
+    max-width: none;
+}
+
+.bizzplugin-repeater-subfield .bizzplugin-image-preview {
+    max-width: 150px;
+}
+
+/* Color picker in repeater */
+.bizzplugin-repeater-subfield .wp-picker-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* =============================================
+   Footer & Add Button
+   ============================================= */
+
+.bizzplugin-repeater-footer {
+    display: flex;
+}
+
+.bizzplugin-repeater-footer .bizzplugin-repeater-add {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.bizzplugin-repeater-add .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* =============================================
+   Sortable Placeholder
+   ============================================= */
+
+.bizzplugin-repeater-placeholder {
+    background: var(--bizzplugin-primary-light);
+    border: 2px dashed var(--bizzplugin-primary);
+    border-radius: var(--bizzplugin-radius);
+    min-height: 60px;
+    margin-bottom: 15px;
+}
+
+/* =============================================
+   Template (Hidden)
+   ============================================= */
+
+.bizzplugin-repeater-template {
+    display: none !important;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+@media screen and (max-width: 782px) {
+    .bizzplugin-repeater-item-header {
+        padding: 10px 12px;
+    }
+    
+    .bizzplugin-repeater-item-content {
+        padding: 15px 12px;
+    }
+    
+    .bizzplugin-repeater-item-title {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,15 @@
+/**
+ * BizzPlugin Options Framework - Textarea Field CSS
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   Textarea Field
+   ============================================= */
+
+.bizzplugin-textarea {
+    min-height: 100px;
+    resize: vertical;
+}

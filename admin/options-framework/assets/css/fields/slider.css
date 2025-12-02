@@ -1,0 +1,126 @@
+/**
+ * BizzPlugin Options Framework - Slider/Range Field CSS
+ * 
+ * For: slider, range fields
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   Slider/Range Field
+   ============================================= */
+
+.bizzplugin-slider-wrap {
+    width: 100%;
+    max-width: 400px;
+}
+
+.bizzplugin-slider-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bizzplugin-slider {
+    flex: 1;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, var(--bizzplugin-primary) 0%, var(--bizzplugin-primary) var(--slider-progress, 50%), var(--bizzplugin-border-dark) var(--slider-progress, 50%), var(--bizzplugin-border-dark) 100%);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.bizzplugin-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: var(--bizzplugin-bg-white);
+    border: 2px solid var(--bizzplugin-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+.bizzplugin-slider::-webkit-slider-thumb:hover {
+    background: var(--bizzplugin-primary-light);
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(34, 113, 177, 0.3);
+}
+
+.bizzplugin-slider::-webkit-slider-thumb:active {
+    background: var(--bizzplugin-primary);
+    transform: scale(1.05);
+}
+
+.bizzplugin-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: var(--bizzplugin-bg-white);
+    border: 2px solid var(--bizzplugin-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+.bizzplugin-slider::-moz-range-thumb:hover {
+    background: var(--bizzplugin-primary-light);
+    transform: scale(1.1);
+}
+
+.bizzplugin-slider::-moz-range-track {
+    height: 8px;
+    background: var(--bizzplugin-border-dark);
+    border-radius: 4px;
+}
+
+.bizzplugin-slider:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.bizzplugin-slider:disabled::-webkit-slider-thumb {
+    cursor: not-allowed;
+    background: var(--bizzplugin-bg);
+    border-color: var(--bizzplugin-border-dark);
+}
+
+.bizzplugin-slider-value {
+    min-width: 70px;
+    padding: 8px 14px;
+    background: var(--bizzplugin-primary);
+    color: #fff;
+    border-radius: var(--bizzplugin-radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(34, 113, 177, 0.3);
+}
+
+.bizzplugin-slider-value-number {
+    font-size: 16px;
+}
+
+.bizzplugin-slider-value-unit {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-left: 2px;
+}
+
+.bizzplugin-slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-right: 85px;
+}
+
+.bizzplugin-slider-min,
+.bizzplugin-slider-max {
+    font-size: 12px;
+    color: var(--bizzplugin-text-secondary);
+}

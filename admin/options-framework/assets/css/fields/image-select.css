@@ -1,0 +1,47 @@
+/**
+ * BizzPlugin Options Framework - Image Select Field CSS
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   Image Select
+   ============================================= */
+
+.bizzplugin-image-select-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.bizzplugin-image-select-item {
+    position: relative;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: var(--bizzplugin-radius-sm);
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.bizzplugin-image-select-item:hover {
+    border-color: var(--bizzplugin-border-dark);
+    transform: translateY(-2px);
+}
+
+.bizzplugin-image-select-item.selected {
+    border-color: var(--bizzplugin-primary);
+}
+
+.bizzplugin-image-select-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.bizzplugin-image-select-item img {
+    display: block;
+    max-width: 100px;
+    height: auto;
+}

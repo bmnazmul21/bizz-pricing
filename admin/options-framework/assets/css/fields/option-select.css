@@ -1,0 +1,56 @@
+/**
+ * BizzPlugin Options Framework - Option Select Field CSS
+ * 
+ * Text-based selection field
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   Option Select (text-based selection)
+   ============================================= */
+
+.bizzplugin-option-select-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bizzplugin-option-select-item {
+    position: relative;
+    cursor: pointer;
+    border: 2px solid var(--bizzplugin-border-dark);
+    border-radius: var(--bizzplugin-radius-sm);
+    padding: 12px 20px;
+    background: var(--bizzplugin-bg-white);
+    transition: all 0.2s ease;
+}
+
+.bizzplugin-option-select-item:hover {
+    border-color: var(--bizzplugin-primary);
+    background: var(--bizzplugin-primary-light);
+}
+
+.bizzplugin-option-select-item.selected {
+    border-color: var(--bizzplugin-primary);
+    background: var(--bizzplugin-primary);
+}
+
+.bizzplugin-option-select-item.selected .bizzplugin-option-select-label {
+    color: #fff;
+}
+
+.bizzplugin-option-select-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.bizzplugin-option-select-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--bizzplugin-text);
+    transition: color 0.2s ease;
+}

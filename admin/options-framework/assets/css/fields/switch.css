@@ -1,0 +1,82 @@
+/**
+ * BizzPlugin Options Framework - Switch/Toggle Field CSS
+ * 
+ * For: on_off, switch fields
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   Toggle Switch (On/Off / Switch)
+   ============================================= */
+
+.bizzplugin-toggle-wrap {
+    display: inline-block;
+}
+
+.bizzplugin-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bizzplugin-toggle-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.bizzplugin-toggle-slider {
+    position: relative;
+    width: 50px;
+    height: 28px;
+    background: var(--bizzplugin-border-dark);
+    border-radius: 14px;
+    transition: background 0.3s ease;
+}
+
+.bizzplugin-toggle-slider::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    background: var(--bizzplugin-bg-white);
+    border-radius: 50%;
+    box-shadow: var(--bizzplugin-shadow);
+    transition: transform 0.3s ease;
+}
+
+.bizzplugin-toggle-input:checked + .bizzplugin-toggle-slider {
+    background: var(--bizzplugin-primary);
+}
+
+.bizzplugin-toggle-input:checked + .bizzplugin-toggle-slider::before {
+    transform: translateX(22px);
+}
+
+.bizzplugin-toggle-input:focus + .bizzplugin-toggle-slider {
+    box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.2);
+}
+
+.bizzplugin-toggle-on,
+.bizzplugin-toggle-off {
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--bizzplugin-text-secondary);
+    display: none;
+}
+
+.bizzplugin-toggle-input:checked ~ .bizzplugin-toggle-on {
+    display: inline;
+    color: var(--bizzplugin-primary);
+}
+
+.bizzplugin-toggle-input:not(:checked) ~ .bizzplugin-toggle-off {
+    display: inline;
+}

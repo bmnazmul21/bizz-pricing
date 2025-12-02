@@ -1,0 +1,17 @@
+/**
+ * BizzPlugin Options Framework - HTML/Info/Notice Field CSS
+ * 
+ * For: html, info, notice, heading, divider, link fields
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   HTML/Info/Notice Fields
+   ============================================= */
+
+/* These fields are primarily display-only and use the base field styles */
+/* This file is for any specific overrides needed */
+
+/* Notice styles are in framework-common.css as they're also used globally */

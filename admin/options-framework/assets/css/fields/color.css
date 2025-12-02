@@ -1,0 +1,14 @@
+/**
+ * BizzPlugin Options Framework - Color Picker Field CSS
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   Color Picker
+   ============================================= */
+
+.bizzplugin-color-picker {
+    width: auto !important;
+}

@@ -1,0 +1,30 @@
+/**
+ * BizzPlugin Options Framework - File Upload Field CSS
+ * 
+ * @package BizzPlugin_Options_Framework
+ * @version 1.0.0
+ */
+
+/* =============================================
+   File Upload
+   ============================================= */
+
+.bizzplugin-file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.bizzplugin-file-name {
+    padding: 8px 12px;
+    background: var(--bizzplugin-bg);
+    border-radius: var(--bizzplugin-radius-sm);
+    font-size: 13px;
+    color: var(--bizzplugin-text);
+    word-break: break-all;
+}
+
+.bizzplugin-file-name:empty {
+    display: none;
+}

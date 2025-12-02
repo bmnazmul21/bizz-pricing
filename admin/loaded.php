@@ -20,12 +20,27 @@ class biz_pricing_loader{
             'position'    => 6,                          // Menu position
             'option_name' => 'biz_pricing_option',         // Database option name
             'is_premium'  => false,
-            'sections'    => $this->get_sections(), 
+            'sections'    => $this->get_sections(),
                                 // You can define sections here or add them later
         ));
     }
     public function get_sections(){
         return array(
+                array(
+                'id'    => 'shortcode',
+                'title' => __('Shortcode ', 'biz-pricing'),
+                'icon'  => 'dashicons-visibility',
+
+                'fields' => array(
+                    array(
+                        'id'    => 'shortcode',
+                        'type'  => 'callback',
+                        'title' => __('Shortcode', 'biz-pricing'),
+                        'render_callback' => array($this, 'render_shortcode_preview'),
+                    ),
+                ),
+            ),
+
             array(
                 'id'    => 'Freemius Settings',
                 'title' => __('Freemius Settings', 'biz-pricing'),
@@ -343,4 +358,10 @@ class biz_pricing_loader{
             ),
         );
     } 
+
+    public function render_shortcode_preview($field, $value,) {
+        echo '<div style="padding:20px; margin-bottom:20px; background:#fff; border:1px solid #ddd; border-radius:6px;">';
+        echo do_shortcode('[biz_pricing]');
+        echo '</div>';
+    }   
 }

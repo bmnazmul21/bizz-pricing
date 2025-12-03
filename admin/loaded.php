@@ -329,29 +329,43 @@ class biz_pricing_loader{
     //     echo '</div>';
     // } 
     
+    // public function render_shortcode_preview($field, $value ) {
+
+    //     $shortcode = '[biz_pricing]';
+
+    //     echo '<div 
+    //             id="copy-shortcode-box" 
+    //             data-copy="'.$shortcode.'" 
+    //             style="padding:20px; margin-bottom:20px; background:#fff; border:1px solid #ddd; border-radius:6px; cursor:pointer;">
+                
+    //             '. do_shortcode($shortcode) .'
+    //         </div>';
+                
+    //     // Copy Script
+    //     echo '<script>
+    //             document.getElementById("copy-shortcode-box").addEventListener("click", function() {
+    //                 var shortcode = this.getAttribute("data-copy");
+    //                 navigator.clipboard.writeText(shortcode).then(function() {
+    //                     alert("Shortcode copied to clipboard: " + shortcode);
+    //                 }, function(err) {
+    //                     console.error("Could not copy text: ", err);
+    //                 });
+    //             });
+    //     </script>';
+    // }
+
     public function render_shortcode_preview($field, $value ) {
-
-        $shortcode = '[biz_pricing]';
-
-        echo '<div 
-                id="copy-shortcode-box" 
-                data-copy="'.$shortcode.'" 
-                style="padding:20px; margin-bottom:20px; background:#fff; border:1px solid #ddd; border-radius:6px; cursor:pointer;">
-                
-                '. do_shortcode($shortcode) .'
+        echo '<div>
+                <input type="text" id="my_shortcode123" value="[shortcode id=123]" readonly>
+                <button type="button" class="bizzplugin-copy-shortcode-btn" data-copy-target="my_shortcode123">
+                    <span class="dashicons dashicons-clipboard"></span> <span class="copy-text">Copy</span>
+                </button>
             </div>';
-                
-        // Copy Script
-        echo '<script>
-                document.getElementById("copy-shortcode-box").addEventListener("click", function() {
-                    var shortcode = this.getAttribute("data-copy");
-                    navigator.clipboard.writeText(shortcode).then(function() {
-                        alert("Shortcode copied to clipboard: " + shortcode);
-                    }, function(err) {
-                        console.error("Could not copy text: ", err);
-                    });
-                });
-        </script>';
+
+            echo '<script>
+                console.log("loaded"); 
+            </script>';
+
     }
 
 }

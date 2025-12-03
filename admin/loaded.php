@@ -40,9 +40,8 @@ class biz_pricing_loader{
                     ),
                 ),
             ),
-
             array(
-                'id'    => 'Freemius Settings',
+                'id'    => 'freemius_settings',
                 'title' => __('Freemius Settings', 'biz-pricing'),
                 'icon'  => 'dashicons dashicons-admin-settings',
                 'fields' => array(
@@ -72,6 +71,7 @@ class biz_pricing_loader{
                     ),
                 ),
             ),
+
             array(
                 'id'    => 'general_settings',
                 'title' => __('General Settings', 'biz-pricing'),
@@ -323,9 +323,35 @@ class biz_pricing_loader{
         );
     } 
 
-    public function render_shortcode_preview($field, $value,) {
-        echo '<div style="padding:20px; margin-bottom:20px; background:#fff; border:1px solid #ddd; border-radius:6px;">';
-        echo do_shortcode('[biz_pricing]');
-        echo '</div>';
-    }   
+    // public function render_shortcode_preview($field, $value,) {
+    //     echo '<div style="padding:20px; margin-bottom:20px; background:#fff; border:1px solid #ddd; border-radius:6px;">';
+    //     echo do_shortcode('[biz_pricing]');
+    //     echo '</div>';
+    // } 
+    
+    public function render_shortcode_preview($field, $value ) {
+
+        $shortcode = '[biz_pricing]';
+
+        echo '<div 
+                id="copy-shortcode-box" 
+                data-copy="'.$shortcode.'" 
+                style="padding:20px; margin-bottom:20px; background:#fff; border:1px solid #ddd; border-radius:6px; cursor:pointer;">
+                
+                '. do_shortcode($shortcode) .'
+            </div>';
+                
+        // Copy Script
+        echo '<script>
+                document.getElementById("copy-shortcode-box").addEventListener("click", function() {
+                    var shortcode = this.getAttribute("data-copy");
+                    navigator.clipboard.writeText(shortcode).then(function() {
+                        alert("Shortcode copied to clipboard: " + shortcode);
+                    }, function(err) {
+                        console.error("Could not copy text: ", err);
+                    });
+                });
+        </script>';
+    }
+
 }

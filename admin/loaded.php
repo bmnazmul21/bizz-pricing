@@ -235,43 +235,6 @@ class biz_pricing_loader{
                     ),
                 ),
             ),
-            // array(
-            //     'id'    => 'bundle_section',
-            //     'title' => __('Bundle Settings', 'biz-pricing'),
-            //     'icon'  => 'dashicons-archive',
-
-            //     // Dependency: Show only if "Enable Bundle Tab" is checked
-            //     'dependency' => array(
-            //         'field' => 'enable_bundle',
-            //         'value' => '2',
-            //     ),
-
-            //     'fields' => array(
-
-            //         array(
-            //             'id'      => 'bundle_items',
-            //             'type'    => 'repeater',
-            //             'title'   => __('Add Bundle Products', 'biz-pricing'),
-            //             'button_title' => __('Add Bundle Item', 'biz-pricing'),
-            //             'sortable' => false,
-
-            //             'fields' => array(
-            //                 array(
-            //                     'id'    => 'product_name',
-            //                     'type'  => 'text',
-            //                     'title' => __('Product Name', 'biz-pricing'),
-            //                 ),
-
-            //                 array(
-            //                     'id'    => 'product_price',
-            //                     'type'  => 'text',
-            //                     'title' => __('Bundle Price', 'biz-pricing'),
-            //                 ),
-            //             ),
-            //         ),
-            //     ),
-            // ),
-
             //bundel features
             array(
                 'id'    => 'bundle_settings',

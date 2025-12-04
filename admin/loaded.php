@@ -250,42 +250,6 @@ class biz_pricing_loader{
                     ),
                 ),
             ),
-            // array(
-            //     'id'    => 'bundle_section',
-            //     'title' => __('Bundle Settings', 'biz-pricing'),
-            //     'icon'  => 'dashicons-archive',
-
-            //     // Dependency: Show only if "Enable Bundle Tab" is checked
-            //     'dependency' => array(
-            //         'field' => 'enable_bundle',
-            //         'value' => '2',
-            //     ),
-
-            //     'fields' => array(
-
-            //         array(
-            //             'id'      => 'bundle_items',
-            //             'type'    => 'repeater',
-            //             'title'   => __('Add Bundle Products', 'biz-pricing'),
-            //             'button_title' => __('Add Bundle Item', 'biz-pricing'),
-            //             'sortable' => false,
-
-            //             'fields' => array(
-            //                 array(
-            //                     'id'    => 'product_name',
-            //                     'type'  => 'text',
-            //                     'title' => __('Product Name', 'biz-pricing'),
-            //                 ),
-
-            //                 array(
-            //                     'id'    => 'product_price',
-            //                     'type'  => 'text',
-            //                     'title' => __('Bundle Price', 'biz-pricing'),
-            //                 ),
-            //             ),
-            //         ),
-            //     ),
-            // ),
 
             //bundel features
             array(
@@ -359,49 +323,57 @@ class biz_pricing_loader{
         );
     } 
 
-    // public function render_shortcode_preview($field, $value,) {
-    //     echo '<div style="padding:20px; margin-bottom:20px; background:#fff; border:1px solid #ddd; border-radius:6px;">';
-    //     echo do_shortcode('[biz_pricing]');
-    //     echo '</div>';
-    // } 
-    
-    // public function render_shortcode_preview($field, $value ) {
+public function render_shortcode_preview($field, $value ) {
+    $shortcode_id = uniqid('shortcode_');
+    $shortcode = '[shortcode id=123]'; // এখানে shortcode dynamic করুন চাইলে
 
-    //     $shortcode = '[biz_pricing]';
+    echo '<div style="margin-bottom:10px;">
+            <input type="text" id="'.esc_attr($shortcode_id).'" value="' . esc_attr($shortcode) . '" readonly style="width:200px; margin-right:8px;">
+            <button type="button" class="bizzplugin-copy-shortcode-btn" data-copy-target="'.esc_attr($shortcode_id).'">
+                <span class="dashicons dashicons-clipboard"></span> <span class="copy-text">Copy</span>
+            </button>
+        </div>';
 
-    //     echo '<div 
-    //             id="copy-shortcode-box" 
-    //             data-copy="'.$shortcode.'" 
-    //             style="padding:20px; margin-bottom:20px; background:#fff; border:1px solid #ddd; border-radius:6px; cursor:pointer;">
-                
-    //             '. do_shortcode($shortcode) .'
-    //         </div>';
-                
-    //     // Copy Script
-    //     echo '<script>
-    //             document.getElementById("copy-shortcode-box").addEventListener("click", function() {
-    //                 var shortcode = this.getAttribute("data-copy");
-    //                 navigator.clipboard.writeText(shortcode).then(function() {
-    //                     alert("Shortcode copied to clipboard: " + shortcode);
-    //                 }, function(err) {
-    //                     console.error("Could not copy text: ", err);
-    //                 });
-    //             });
-    //     </script>';
-    // }
-
-    public function render_shortcode_preview($field, $value ) {
-        echo '<div>
-                <input type="text" id="my_shortcode123" value="[shortcode id=123]" readonly>
-                <button type="button" class="bizzplugin-copy-shortcode-btn" data-copy-target="my_shortcode123">
-                    <span class="dashicons dashicons-clipboard"></span> <span class="copy-text">Copy</span>
-                </button>
-            </div>';
-
-            echo '<script>
-                console.log("loaded"); 
-            </script>';
-
-    }
+    echo '<script>
+        document.addEventListener("click", function (e) {
+            if(e.target.closest(".bizzplugin-copy-shortcode-btn")) {
+                var btn = e.target.closest(".bizzplugin-copy-shortcode-btn");
+                var inputId = btn.getAttribute("data-copy-target");
+                var input = document.getElementById(inputId);
+                if (input) {
+                    // First, try modern clipboard
+                    if(window.navigator.clipboard){
+                        navigator.clipboard.writeText(input.value).then(function(){
+                            showCopiedNotif();
+                        }, function(){
+                            fallbackCopy(input);
+                        });
+                    }else{
+                        fallbackCopy(input);
+                    }
+                }
+                function showCopiedNotif() {
+                    var notif = document.createElement("div");
+                    notif.textContent = "Copied!";
+                    notif.style.position = "fixed";
+                    notif.style.top = "30px";
+                    notif.style.right = "30px";
+                    notif.style.background = "#222";
+                    notif.style.color = "#fff";
+                    notif.style.padding = "6px 15px";
+                    notif.style.borderRadius = "5px";
+                    notif.style.zIndex = 10000;
+                    document.body.appendChild(notif);
+                    setTimeout(function(){ notif.remove(); }, 1200);
+                }
+                function fallbackCopy(input){
+                    input.select();
+                    document.execCommand("copy");
+                    showCopiedNotif();
+                }
+            }
+        });
+    </script>';
+}
 
 }
